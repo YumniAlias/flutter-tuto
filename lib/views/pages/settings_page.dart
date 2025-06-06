@@ -44,6 +44,30 @@ class _SettingsPageState extends State<SettingsPage> {
                 },
                 child: Text('Open Snackbar'),
               ),
+              Divider(color: Colors.teal, thickness: 5.0, endIndent: 200.0),
+              // Container(height: 50.0, child: VerticalDivider()),
+              ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text('Alert Title'),
+                        content: Text('Alert Content'),
+                        actions: [
+                          FilledButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Close'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Text('Open Dialog'),
+              ),
               DropdownButton(
                 value: menuItem,
                 items: [
